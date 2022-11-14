@@ -21,7 +21,7 @@ node {
     
     stage('Push Image to Remote Repo'){
 	 echo "Docker Image Tag Name ---> ${dockerImageTag}"
-	     docker.withRegistry('', 'dockerHub') {
+	     docker.withRegistry('', 'Akj@151718') {
              dockerImage.push("${env.BUILD_NUMBER}")
              dockerImage.push("latest")
          }
