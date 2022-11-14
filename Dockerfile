@@ -1,7 +1,6 @@
-FROM openjdk:8-jdk-alpine
+FROM openjdk:11.0.4
 VOLUME /tmp
-ADD target/devOpsDemo-0.0.1-SNAPSHOT.jar app.jar
-
-ENTRYPOINT ["java","-jar","app.jar"]
-
+RUN mkdir -p /app/
+ADD target/devOpsDemo-0.0.1.jar /app/app.jar
+ENTRYPOINT ["java","-jar", "/app/app.jar"]
 EXPOSE 2222
